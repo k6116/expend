@@ -26,11 +26,14 @@ app.use(express.static('public'));
 const port = process.env.PORT || '4200';
 app.set('port', port);
 
+app.set('Content-Type', 'text/plain');
+
 
 // start the server
 const server = http.createServer(app);
 server.listen(port, () => console.log(`Running on localhost:${port}`));
-
+console.log('app')
+console.log(app)
 // const http = require('http');
 // const PORT = process.env.PORT || 5000;
 // const server = http.createServer((req, res) => {
