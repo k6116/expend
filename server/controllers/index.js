@@ -1,4 +1,4 @@
 
 module.exports = {
-  pickLists: require('./pickListController')
+  test: require('./testController')
 }

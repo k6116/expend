@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiDataService } from '../api-data.service';
 
 @Component({
   selector: 'app-test',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
-  constructor() { }
+  testData: any;
+
+  constructor(
+    private apiDataService: ApiDataService
+  ) { }
 
   ngOnInit() {
+    this.getTestData();
   }
+
+  getTestData() {
+    this.apiDataService.getTestData()
+    .subscribe(
+      res => {
+        console.log('Test Data List: ', res);
+        this.testData = res;
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
 
 }

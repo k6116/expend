@@ -1,4 +1,4 @@
 
 module.exports = {
-  Model: require('./model.js'),
+  Junk: require('./junk'),
 }

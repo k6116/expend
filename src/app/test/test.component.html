@@ -1,3 +1,25 @@
-<p>
-  test works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h1>My Test Page</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table table-sm table-striped">
+        <thead>
+          <tr>
+            <th>name</th>
+            <th>a_number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of testData">
+            <td>{{ row.name }}</td>
+            <td>{{ row.a_number }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>  
