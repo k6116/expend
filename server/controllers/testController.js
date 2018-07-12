@@ -40,6 +40,46 @@ function indexTestData(req, res) {
   });
 }
 
+function insertTestData(req, res) {
+
+  const testData = req.body;
+
+  return sequelize.transaction((t) => {
+
+    return models.Junk
+      .create(
+        {
+          name: testData.name,
+          a_number: testData.a_number
+        },
+        {
+          transaction: t
+        }
+      )
+      .then(insertTestData => {
+
+        console.log('testData inserted');
+
+      })
+
+    }).then(() => {
+
+      res.json({
+        message: `testData insert has been made successfully`,
+      })
+
+    }).catch(error => {
+
+      console.log(error);
+      res.status(500).json({
+        title: 'update failed',
+        error: {message: error}
+      });
+
+    })
+}
+
 module.exports = {
   indexTestData: indexTestData,
+  insertTestData: insertTestData
 }

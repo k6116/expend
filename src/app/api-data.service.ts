@@ -21,4 +21,11 @@ export class ApiDataService {
     .map((response: Response) => response.json());
   }
 
+  insertTestData(testData: any) {
+    const headers = new Headers({'Content-Type': 'application/json'});
+    const options = new RequestOptions({ headers: headers });
+    return this.http.post(`/api/insertTestData/`, JSON.stringify(testData), options)
+      .timeout(this.timeout)
+      .map((response: Response) => response.json());
+  }
 }

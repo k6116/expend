@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('pstest App', () => {
+describe('expend App', () => {
   let page: AppPage;
 
   beforeEach(() => {

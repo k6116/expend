@@ -14,5 +14,6 @@ const Junk = sequelize.define('junk',
   }
 );
 
+Junk.removeAttribute('id');
 
 module.exports = Junk
