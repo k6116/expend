@@ -15,6 +15,11 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
   }
 
+  onExpensesMenuClick() {
+    console.log('Expenses Menu click');
+    this.router.navigate([`/main/expenses`]);
+  }
+
   onTestMenuClick() {
     console.log('Test Menu click');
     this.router.navigate([`/main/test`]);

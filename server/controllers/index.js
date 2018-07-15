@@ -1,4 +1,7 @@
 
 module.exports = {
-  test: require('./testController')
+  category: require('./categoryController'),
+  expense: require('./expenseController'),
+  test: require('./testController'),
+  user: require('./userController')
 }
