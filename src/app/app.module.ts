@@ -11,12 +11,16 @@ import { AppDataService } from './app-data.service';
 
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
+import { SidebarComponent } from './navs/sidebar/sidebar.component';
+import { MainComponent } from './main/main.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    SidebarComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
