@@ -22,10 +22,10 @@ const sequelize = require('../db/sequelize').sequelize;
 
 // }
 
-function indexExpenseData(req, res) {
+function indexExpenseList(req, res) {
 
   models.Expense.findAll({
-    attributes: ['date', 'amount', 'description', 'categoryId', 'purchasedBy', 'Shared', 'Reimbursed', 'Notes', 'CreatedBy', 'CreationDate'],
+    attributes: ['date', 'amount', 'description', 'categoryId', 'purchasedBy', 'shared', 'reimbursed', 'notes', 'createdBy', 'creationDate'],
     raw: true,
     include: [
       {
@@ -44,9 +44,9 @@ function indexExpenseData(req, res) {
       },  
     ]
   })
-  .then(junk => {
-    console.log('Returning expense data')
-    res.json(junk);
+  .then(indexExpenseList => {
+    console.log('Returning expense list')
+    res.json(indexExpenseList);
   })
   .catch(error => {
     res.status(400).json({
@@ -57,32 +57,41 @@ function indexExpenseData(req, res) {
   });
 }
 
-function insertTestData(req, res) {
+function insertExpense(req, res) {
 
-  const testData = req.body;
+  const expenseData = req.body;
+  const today = new Date();
 
   return sequelize.transaction((t) => {
 
-    return models.Junk
+    return models.Expense
       .create(
         {
-          name: testData.name,
-          a_number: testData.a_number
+          date: expenseData.date,
+          amount: expenseData.amount,
+          description: expenseData.description,
+          categoryId: expenseData.categoryId,
+          purchasedBy: expenseData.purchasedBy,
+          shared: expenseData.shared,
+          reimbursed: expenseData.reimbursed,
+          notes: expenseData.notes,
+          createdBy: 1,
+          creationDate: today
         },
         {
           transaction: t
         }
       )
-      .then(insertTestData => {
+      .then(insertExpenseData => {
 
-        console.log('testData inserted');
+        console.log('expenseData inserted');
 
       })
 
     }).then(() => {
 
       res.json({
-        message: `testData insert has been made successfully`,
+        message: `expenseData insert has been made successfully`,
       })
 
     }).catch(error => {
@@ -97,6 +106,6 @@ function insertTestData(req, res) {
 }
 
 module.exports = {
-  indexExpenseData: indexExpenseData,
-  insertTestData: insertTestData
+  indexExpenseList: indexExpenseList,
+  insertExpense: insertExpense
 }

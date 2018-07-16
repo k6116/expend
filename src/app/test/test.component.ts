@@ -25,40 +25,40 @@ export class TestComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getTestData();
+    // this.getTestData();
   }
 
-  getTestData() {
-    this.apiDataService.getTestData()
-    .subscribe(
-      res => {
-        console.log('Test Data List: ', res);
-        this.testData = res;
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
+  // getTestData() {
+  //   this.apiDataService.getTestData()
+  //   .subscribe(
+  //     res => {
+  //       console.log('Test Data List: ', res);
+  //       this.testData = res;
+  //     },
+  //     err => {
+  //       console.log(err);
+  //     }
+  //   );
+  // }
 
-  insertTestData() {
+  // insertTestData() {
 
-    const name = this.form.value.name;
-    const a_number = this.form.value.a_number;
+  //   const name = this.form.value.name;
+  //   const a_number = this.form.value.a_number;
 
-    this.newTestData = {name: name, a_number: a_number};
+  //   this.newTestData = {name: name, a_number: a_number};
 
-    this.apiDataService.insertTestData(this.newTestData)
-    .subscribe(
-      res => {
-        console.log('Test Data Inserted', res);
-        this.getTestData();
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
+  //   this.apiDataService.insertTestData(this.newTestData)
+  //   .subscribe(
+  //     res => {
+  //       console.log('Test Data Inserted', res);
+  //       this.getTestData();
+  //     },
+  //     err => {
+  //       console.log(err);
+  //     }
+  //   );
+  // }
 
 
 }

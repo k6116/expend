@@ -1,0 +1,16 @@
+.row-header {
+    padding-top: 50px;
+}
+
+.jumbotron {
+    padding: 2rem 1rem;
+}
+
+.borderless td, .borderless th {
+    border: none;
+}
+
+.table tr.highlighted td {
+    background-color:#123456 !important;
+    color: white;
+}

@@ -15,17 +15,36 @@ export class ApiDataService {
     this.timeout = 15000;
   }
 
-  getTestData() {
-    return this.http.get('api/indexTestData')
+  // Expense APIs
+
+  getExpenseList() {
+    return this.http.get('api/indexExpenseList')
     .timeout(this.timeout)
     .map((response: Response) => response.json());
   }
 
-  insertTestData(testData: any) {
+  insertExpense(expenseData: any) {
     const headers = new Headers({'Content-Type': 'application/json'});
     const options = new RequestOptions({ headers: headers });
-    return this.http.post(`/api/insertTestData/`, JSON.stringify(testData), options)
+    return this.http.post(`/api/insertExpense/`, JSON.stringify(expenseData), options)
       .timeout(this.timeout)
       .map((response: Response) => response.json());
   }
+
+  // Category APIs
+
+  getCategoryList() {
+    return this.http.get('api/indexCategoryList')
+    .timeout(this.timeout)
+    .map((response: Response) => response.json());
+  }
+
+  // User APIs
+
+  getUserList() {
+    return this.http.get('api/indexUserList')
+    .timeout(this.timeout)
+    .map((response: Response) => response.json());
+  }
+
 }
