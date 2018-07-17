@@ -1,24 +1,13 @@
 <form [formGroup]="form">
 
 <div class="container-fluid">
+
   <div class="row row-header">
     <div class="col">
       <div class="jumbotron">
 
         <div class="row">
-          <div class="col-2">
-            <table class="table table-hover table-sm borderless">
-              <thead>
-                <th>Category</th>
-              </thead>
-              <tbody>
-                <tr *ngFor="let cat of categoryList" (click)="selectCategory(cat)" [class.highlighted]="cat.id === selectedCategoryID">
-                  <td>{{ cat.name }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>  
-          <div class="col-6">
+          <div class="col-7">
             <div class="row">
               <div class="col-2">
                 <div class="form-group">
@@ -64,17 +53,33 @@
                 </div>
             </div>
           </div>
-          <div class="col-2">
-            <table class="table table-hover table-sm borderless">
-              <thead>
-                <th>Purchased By</th>
-              </thead>
-              <tbody>
-                <tr *ngFor="let pUser of purchasedUserList" (click)="selectPurchasedUser(pUser)" [class.highlighted]="pUser.id === selectedPurchasedUserID">
-                  <td>{{ pUser.firstName }} {{ pUser.lastName }}</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="col-3">
+            <div class="row">
+              <div class="col-6">
+                <table class="table table-hover table-sm borderless">
+                  <thead>
+                    <th>Category</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cat of categoryList" (click)="selectCategory(cat)" [class.highlighted]="cat.id === selectedCategoryID">
+                      <td>{{ cat.name }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-6">
+                <table class="table table-hover table-sm borderless">
+                  <thead>
+                    <th>Purchased By</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let pUser of purchasedUserList" (click)="selectPurchasedUser(pUser)" [class.highlighted]="pUser.id === selectedPurchasedUserID">
+                      <td>{{ pUser.firstName }} {{ pUser.lastName }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
           <div class="col-2">
             <button class="btn btn-save" (click)="submitExpense()">
@@ -86,6 +91,49 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="jumbotron">
+
+        <div class="row">
+          <div class="col">
+            <table class="table table-hover table-sm borderless">
+              <thead>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Purchased By</th>
+                <th>Shared?</th>
+                <th>Reimbursed?</th>
+                <th>Notes</th>
+                <th>Created By</th>
+                <th>Creation Date</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let exp of expenseList">
+                  <td>{{ exp.date }}</td>
+                  <td>{{ exp.amount }}</td>
+                  <td>{{ exp.description }}</td>
+                  <td>{{ exp['category.name'] }}</td>
+                  <td>{{ exp['purchasedByUser.firstName'] }} {{ exp['purchasedByUser.lastName'] }}</td>
+                  <td>{{ exp.shared }}</td>
+                  <td>{{ exp.reimbursed }}</td>
+                  <td>{{ exp.notes }}</td>
+                  <td>{{ exp['createdByUser.firstName'] }} {{ exp['createdByUser.lastName'] }}</td>
+                  <td>{{ exp.creationDate }}</td>
+                  <td><button type="button" class="btn" (click)="onExpenseRowDeleteClick(exp)">Delete</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>  
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </div>
 
 </form>

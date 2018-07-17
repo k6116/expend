@@ -25,7 +25,7 @@ const sequelize = require('../db/sequelize').sequelize;
 function indexExpenseList(req, res) {
 
   models.Expense.findAll({
-    attributes: ['date', 'amount', 'description', 'categoryId', 'purchasedBy', 'shared', 'reimbursed', 'notes', 'createdBy', 'creationDate'],
+    attributes: ['id', 'date', 'amount', 'description', 'categoryId', 'purchasedBy', 'shared', 'reimbursed', 'notes', 'createdBy', 'creationDate'],
     raw: true,
     include: [
       {
@@ -105,7 +105,46 @@ function insertExpense(req, res) {
     })
 }
 
+function destroyExpense(req, res) {
+
+  // index the project object and userID from the params
+  const expense = req.body;
+
+  return sequelize.transaction((t) => {
+
+    return models.Expense
+      .destroy(
+        {
+          where: {id: expense.id},
+          transaction: t
+        }
+      )
+      .then(destroyExpense => {
+
+        console.log('deleted expense')
+
+      })
+
+    }).then(() => {
+
+      res.json({
+        message: `The expenseID '${expense.id}' has been deleted successfully`,
+      })
+
+    }).catch(error => {
+
+      console.log(error);
+      res.status(500).json({
+        title: 'update failed',
+        error: {message: error}
+      });
+
+    })
+
+}
+
 module.exports = {
   indexExpenseList: indexExpenseList,
-  insertExpense: insertExpense
+  insertExpense: insertExpense,
+  destroyExpense: destroyExpense
 }

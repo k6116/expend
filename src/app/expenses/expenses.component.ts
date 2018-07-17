@@ -12,6 +12,7 @@ export class ExpensesComponent implements OnInit {
   form: FormGroup;
   categoryList: any;
   purchasedUserList: any;
+  expenseList: any;
   selectedCategoryID: any;
   selectedPurchasedUserID: any;
 
@@ -34,6 +35,20 @@ export class ExpensesComponent implements OnInit {
   ngOnInit() {
     this.getCategoryList();
     this.getPurchasedUserList();
+    this.getExpenseList();
+  }
+
+  resetForm() {
+    this.form = this.formBuilder.group({
+      // date: [null],
+      description: [null],
+      amount: [null],
+      categoryId: [null],
+      purchasedBy: [null],
+      notes: [null],
+      shared: [false],
+      reimbursed: [false]
+    });
   }
 
   getCategoryList() {
@@ -81,6 +96,34 @@ export class ExpensesComponent implements OnInit {
     .subscribe(
       res => {
         console.log('Insert Expense Data Successful ', res);
+        this.getExpenseList();
+        this.resetForm();
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  getExpenseList() {
+    this.apiDataService.getExpenseList()
+    .subscribe(
+      res => {
+        console.log('Expense List ', res);
+        this.expenseList = res;
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  onExpenseRowDeleteClick(expenseData: any) {
+    this.apiDataService.deleteExpense(expenseData)
+    .subscribe(
+      res => {
+        console.log('Delete Expense Data Successful ', res);
+        this.getExpenseList();
       },
       err => {
         console.log(err);
