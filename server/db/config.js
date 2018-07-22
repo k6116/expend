@@ -3,7 +3,7 @@ const config = {
   dbname: "hellodb",
   host: 'localhost',
   username: 'postgres',
-  password: 'Sarah412!',
+  password: 'Qwer1234!@#$',
   dialect: 'postgres'
 };
 

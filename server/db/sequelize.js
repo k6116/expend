@@ -20,8 +20,9 @@ if (process.env.DATABASE_URL) {
   })
 } else {
   // the application is executed on the local machine ... use mysql
-  sequelize = new Sequelize('postgres://postgres:Sarah412!@localhost:5432/hellodb');
+  sequelize = new Sequelize('hellodb', 'postgres', 'Qwer1234!@#$', config);
 }
+// sequelize = new Sequelize('postgres://postgres:Qwer1234!@#$@localhost:5432/hellodb');
 
 function connect() {
 
