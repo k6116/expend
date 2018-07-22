@@ -10,7 +10,6 @@ import { AppDataService } from './app-data.service';
 
 
 import { AppComponent } from './app.component';
-import { TestComponent } from './test/test.component';
 import { SidebarComponent } from './navs/sidebar/sidebar.component';
 import { MainComponent } from './main/main.component';
 import { ExpensesComponent } from './expenses/expenses.component';
@@ -19,7 +18,6 @@ import { ExpensesComponent } from './expenses/expenses.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
     SidebarComponent,
     MainComponent,
     ExpensesComponent

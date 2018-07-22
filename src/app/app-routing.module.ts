@@ -5,8 +5,6 @@ import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { ExpensesComponent } from './expenses/expenses.component';
-import { TestComponent } from './test/test.component';
-
 
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
@@ -14,8 +12,7 @@ const routes: Routes = [
   {
     path: 'main', component: MainComponent,
     children: [
-      { path: 'expenses', component: ExpensesComponent },
-      { path: 'test', component: TestComponent },
+      { path: 'expenses', component: ExpensesComponent }
       // { path: '', redirectTo: 'fte-entry/employee', pathMatch: 'full' },
       // { path: 'dashboard', component: DashboardComponent }
     ]
