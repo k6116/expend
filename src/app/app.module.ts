@@ -15,7 +15,6 @@ import { AlertService } from './_shared/services/alert.service';
 import { AuthenticationService } from './_shared/services/authentication.service';
 
 import { AppComponent } from './app.component';
-import { TestComponent } from './test/test.component';
 import { SidebarComponent } from './navs/sidebar/sidebar.component';
 import { MainComponent } from './main/main.component';
 import { ExpensesComponent } from './expenses/expenses.component';
@@ -26,7 +25,6 @@ import { AlertComponent } from './_shared/directives/alert/alert.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
     SidebarComponent,
     MainComponent,
     ExpensesComponent,
