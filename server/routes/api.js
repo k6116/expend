@@ -15,5 +15,7 @@ router.get('/indexCategoryList', controllers.category.indexCategoryList);
 // User Controller
 router.get('/indexUserList', controllers.user.indexUserList);
 
+router.post('/authenticate', controllers.auth.authenticate);
+
 
 module.exports = router;

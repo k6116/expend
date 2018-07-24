@@ -6,7 +6,7 @@ const sequelize = require('../db/sequelize').sequelize;
 function indexUserList(req, res) {
 
   models.User.findAll({
-    attributes: ['id', 'firstName', 'lastName', 'email', 'lastActivityDate'],
+    attributes: ['id', 'firstName', 'lastName', 'userName', 'password', 'email', 'lastActivityDate'],
   })
   .then(indexUserList => {
     console.log('Returning user list')

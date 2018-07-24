@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiDataService } from '../api-data.service';
+import { ApiDataService } from '../_shared/services/api-data.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
-  styleUrls: ['./test.component.css', '../_shared/common.css']
+  styleUrls: ['./test.component.css', '../_shared/styles/common.css']
 })
 export class TestComponent implements OnInit {
 

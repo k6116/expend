@@ -55,4 +55,13 @@ export class ApiDataService {
     .map((response: Response) => response.json());
   }
 
+
+  authenticate(user: any) {
+
+    return this.http.get(`/api/login/${user}`)
+      .timeout(this.timeout)
+      .map((response: Response) => response.json());
+
+  }
+
 }

@@ -1,0 +1,40 @@
+
+div.login-cont {
+  width: 400px;
+  height: 350px;
+  border: 1px solid rgb(177, 177, 177);
+  border-radius: 5px;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+div.login-cont-inner {
+  margin-top: 30px;
+}
+
+div.form-group-login {
+  width: 300px;
+  margin: 20px auto;
+}
+
+div.form-group-login.form-group-login-button {
+  margin-top: 35px;
+}
+
+button.btn-login {
+  width: 300px;
+}
+
+.login-cont-inner-message {
+  width: 300px;
+  margin: 30px auto;
+}
+
+i.login-message-icon {
+  margin-right: 10px;
+  font-size: 22px;
+}

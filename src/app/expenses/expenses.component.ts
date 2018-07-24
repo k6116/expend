@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiDataService } from '../api-data.service';
+import { ApiDataService } from '../_shared/services/api-data.service';
 
 @Component({
   selector: 'app-expenses',
   templateUrl: './expenses.component.html',
-  styleUrls: ['./expenses.component.css', '../_shared/common.css']
+  styleUrls: ['./expenses.component.css', '../_shared/styles/common.css']
 })
 export class ExpensesComponent implements OnInit {
 
