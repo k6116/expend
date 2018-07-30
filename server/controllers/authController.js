@@ -2,7 +2,7 @@
 const models = require('../models')
 const Sequelize = require('sequelize');
 const sequelize = require('../db/sequelize').sequelize;
-
+const jwt = require('jsonwebtoken');
 
 function authenticate(req, res) {
 
@@ -12,30 +12,29 @@ console.log(user)
   models.User.findOne({
     where: {userName: user.userName, password: user.password}
   }).then(resUser => {
-    console.log(resUser)
-     res.json(resUser)
-      // if (resUser) {
 
-      //   // build an encrypted token using the jsonwebtoken module
-      //   const token = jwt.sign(
-      //     {
-      //       userName: user.username,
-      //       email: user.email, 
-      //       rememberMe: true
-      //     }, 
-      //     tokenSecret, 
-      //     {expiresIn: expirationTime}
-      //   );
+    if (resUser) {
+      console.log('testing!');
+// res.json(resUser);
+      // build an encrypted token using the jsonwebtoken module
+      const token = jwt.sign(
+        {
+          userName: resUser.userName,
+        }, 
+        'secret', 
+        {expiresIn: 15000}
+      );
 
-      //   res.json({
-      //     user: resUser,
-      //     token: token
-      //   });
+console.log('toekn', token)
+      res.json({
+        user: resUser,
+        token: token
+      });
 
-      // } else {
-      //     // else return 400 bad request
-      //     return Observable.throw('Username or password is incorrect');
-      // }
+    } else {
+        // else return 400 bad request
+        return Observable.throw('Username or password is incorrect');
+    }
 
   })
   .catch(error => {

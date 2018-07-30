@@ -1,0 +1,22 @@
+import { Component, OnInit } from '@angular/core';
+
+import { User } from '../_shared/models/user.model';
+
+@Component({
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css', '../_shared/styles/common.css']
+})
+export class DashboardComponent implements OnInit {
+
+  currentUser: User;
+  users: User[] = [];
+
+  constructor() {
+      this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  }
+
+  ngOnInit() {
+  }
+
+}

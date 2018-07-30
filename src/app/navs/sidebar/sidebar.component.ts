@@ -20,9 +20,9 @@ export class SidebarComponent implements OnInit {
     this.router.navigate([`/main/expenses`]);
   }
 
-  onTestMenuClick() {
-    console.log('Test Menu click');
-    this.router.navigate([`/main/test`]);
+  onDashbaordMenuClick() {
+    console.log('Dashboard Menu click');
+    this.router.navigate([`/main/dashboard`]);
   }
 
 }

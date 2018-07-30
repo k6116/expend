@@ -20,6 +20,7 @@ import { MainComponent } from './main/main.component';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AlertComponent } from './_shared/directives/alert/alert.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { AlertComponent } from './_shared/directives/alert/alert.component';
     ExpensesComponent,
     LoginComponent,
     AlertComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

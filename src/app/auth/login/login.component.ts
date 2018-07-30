@@ -25,7 +25,8 @@ export class LoginComponent implements OnInit {
         this.authenticationService.logout();
 
         // get return url from route parameters or default to '/'
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/main/dashboard';
+        console.log('return url', this.returnUrl);
     }
 
     login() {
@@ -34,10 +35,10 @@ export class LoginComponent implements OnInit {
             .subscribe(
                 data => {
                     console.log('User Data', data);
-                    // this.router.navigate([this.returnUrl]);
+                    this.router.navigate([this.returnUrl]);
                 },
                 error => {
-                    console.log(error);
+                    console.log('Error: Username or Password incorrect');
                     this.alertService.error(error);
                     this.loading = false;
                 });
