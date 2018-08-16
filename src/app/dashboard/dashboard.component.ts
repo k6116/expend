@@ -22,16 +22,5 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
-  test() {
-    this.apiDataService.scheduleAlgo()
-    .subscribe(
-      res => {
-        console.log('Schedule Algo List: ', res);
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
 
 }

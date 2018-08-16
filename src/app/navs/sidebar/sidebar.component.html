@@ -4,18 +4,17 @@
     <!-- Sidebar  -->
     <nav id="sidebar">
         <div class="sidebar-header">
-            <h3>Bootstrap Sidebar</h3>
+            <h3>The Playground</h3>
         </div>
 
-        <ul class="list-unstyled components">
-            <p>Dummy Heading</p>
-            <li>
+        <ul class="sidebar-body list-unstyled components">
+            <li [class.active]="dashboard">
                 <a href="javascript:void(0)" (click)="onDashboardMenuClick()">Dashboard</a>
             </li>
-            <li>
-                <a href="javascript:void(0)" (click)="onGeneticsMenuClick()">Genetics</a>
+            <li [class.active]="scheduler">
+                <a href="javascript:void(0)" (click)="onSchedulerMenuClick()">Scheduler</a>
             </li>
-            <li class="active">
+            <li [class.active]="expenses">
                 <a href="javascript:void(0)" (click)="onExpensesMenuClick()">Expenses</a>
             </li>
             <li>

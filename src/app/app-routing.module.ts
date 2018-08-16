@@ -8,6 +8,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { MainComponent } from './main/main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ExpensesComponent } from './expenses/expenses.component';
+import { SchedulerComponent } from './scheduler/scheduler.component';
 import { AuthGuard } from './_shared/guards/auth.guard';
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
       { path: 'expenses', component: ExpensesComponent, canActivate: [AuthGuard] },
+      { path: 'scheduler', component: SchedulerComponent, canActivate: [AuthGuard] },
       // { path: '', redirectTo: 'fte-entry/employee', pathMatch: 'full' },
       // { path: 'dashboard', component: DashboardComponent }
     ]

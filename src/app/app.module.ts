@@ -22,6 +22,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { AlertComponent } from './alert/alert.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { SchedulerComponent } from './scheduler/scheduler.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { RegisterComponent } from './auth/register/register.component';
     AlertComponent,
     DashboardComponent,
     RegisterComponent,
+    SchedulerComponent,
   ],
   imports: [
     BrowserModule,
