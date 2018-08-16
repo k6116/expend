@@ -16,13 +16,18 @@ export class SidebarComponent implements OnInit {
   }
 
   onExpensesMenuClick() {
-    console.log('Expenses Menu click');
+    console.log('Expenses Menu Click');
     this.router.navigate([`/main/expenses`]);
   }
 
-  onDashbaordMenuClick() {
-    console.log('Dashboard Menu click');
+  onDashboardMenuClick() {
+    console.log('Dashboard Menu Click');
     this.router.navigate([`/main/dashboard`]);
+  }
+
+  onGeneticsMenuClick() {
+    console.log('Genetics Menu Click')
+    // this.router.navigate([`/main/genetics`]);
   }
 
 }

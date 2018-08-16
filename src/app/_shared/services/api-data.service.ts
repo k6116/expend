@@ -57,11 +57,17 @@ export class ApiDataService {
 
 
   authenticate(user: any) {
-
     return this.http.get(`/api/login/${user}`)
       .timeout(this.timeout)
       .map((response: Response) => response.json());
-
   }
+
+  // Python APIs
+  scheduleAlgo() {
+    return this.http.get(`/api/scheduleAlgo/`)
+      .timeout(this.timeout)
+      .map((response: Response) => response.json());
+  }
+
 
 }

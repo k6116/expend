@@ -19,9 +19,9 @@ import { SidebarComponent } from './navs/sidebar/sidebar.component';
 import { MainComponent } from './main/main.component';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { LoginComponent } from './auth/login/login.component';
-import { AlertComponent } from './_shared/directives/alert/alert.component';
+import { AlertComponent } from './alert/alert.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +32,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LoginComponent,
     AlertComponent,
     DashboardComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

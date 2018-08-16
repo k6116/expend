@@ -38,8 +38,8 @@ export class LoginComponent implements OnInit {
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {
-                    console.log('Error: Username or Password incorrect');
-                    this.alertService.error(error);
+                    console.log('Error: Username or Password incorrect', error.error.message);
+                    this.alertService.error(error.error.message);
                     this.loading = false;
                 });
     }

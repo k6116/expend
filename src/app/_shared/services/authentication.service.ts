@@ -14,7 +14,7 @@ export class AuthenticationService {
 
     }
 
-    login(userName: string, password: string) {
+    login (userName: string, password: string) {
         return this.http.post<any>('/api/authenticate', { userName: userName, password: password  })
             .map(user => {
                 // login successful if there's a jwt token in the response
@@ -27,17 +27,22 @@ export class AuthenticationService {
             });
     }
 
-    logout() {
+    logout () {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
     }
 
-    // login(userName: string, password: string) {
+    register (userData: any) {
+        return this.http.post<any>('/api/register', userData)
+    }
+    // register (userData: any) {
     //     const headers = new Headers({'Content-Type': 'application/json'});
     //     const options = new RequestOptions({ headers: headers });
-    //     return this.http.post(`/api/authenticate/`, JSON.stringify({ userName: userName, password: password }), options)
-    //       .timeout(1500)
+    //     return this.http.post(`/api/register/`, JSON.stringify(userData), options)
+    //       .timeout(this.timeout)
     //       .map((response: Response) => response.json());
     //   }
+
+    
 
 }

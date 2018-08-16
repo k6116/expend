@@ -21,7 +21,6 @@ function indexUserList(req, res) {
   });
 }
 
-
 module.exports = {
-  indexUserList: indexUserList,
+  indexUserList: indexUserList
 }

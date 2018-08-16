@@ -7,7 +7,6 @@ const app = express();
 const api = require('./server/routes/api');
 const sequelize = require('./server/db/sequelize');
 
-
 // connect to the database
 sequelize.connect();
 
