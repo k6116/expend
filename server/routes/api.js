@@ -20,7 +20,7 @@ router.post('/authenticate', controllers.auth.authenticate);
 router.post('/register', controllers.auth.register);
 
 // Python Controller
-router.get('/pythonTest/:firstName/:lastName', controllers.python.pythonTest);
+router.get('/pythonTest/', controllers.python.pythonTest);
 router.get('/scheduleAlgo/', controllers.python.scheduleAlgo);
 
 

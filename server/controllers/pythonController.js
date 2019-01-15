@@ -18,24 +18,30 @@ function pythonTest(req, res) {
   //   res.send(data.toString());
   // })
 
-  let spawn = require('child_process').spawn;
-  let py = spawn('python',["./src/assets/python/hello.py"] );
-  let data = [1,2,3,4,5,6,7,8,9];
-  let dataString = '';
-  let awef = '';
 
-  py.stdout.on('data', function(data){
+  const spawn = require("child_process").spawn;
+  const py = spawn('python', ["./src/assets/python/testString.py"]);
+  var dataString = '';
+
+  // Handle normal output
+  py.stdout.on('data', (data) => {
     dataString += data.toString();
   });
-  py.stdout.on('end', function(){
-    console.log('Sum of numbers=', dataString);
 
+  py.stdout.on('end', () => {
+    console.log('datastring', dataString)
+    // console.log(dataString.replace(/(?:\\[rn])+/g, 'wrt'));
+    res.json(dataString.replace(/(?:\\[rn])+/g, ""));
   });
-  py.stdin.write(JSON.stringify(data));
-  this.awef = data
-  res.json(JSON.stringify(this.awef))
-  py.stdin.end();
+
+  // Write data (remember to send only strings or numbers, otherwhise python wont understand)
+  // var data = JSON.stringify([1,2,3,4,6,125]);
+  var data = JSON.stringify(['paul','ant', 'tojo']);
+  py.stdin.write(data);
   
+  // End data write
+  py.stdin.end();
+
 
 };
 
