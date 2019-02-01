@@ -18,16 +18,24 @@ export class SchedulerComponent implements OnInit {
   ngOnInit() {
   }
 
-  test() {
-    this.apiDataService.scheduleAlgo()
-    .subscribe(
-      res => {
-        console.log('Schedule Algo List: ', res);
-      },
-      err => {
-        console.log(err);
-      }
-    );
+  test1() {
+
+    const obj = {
+      name: '1111'
+    }
+
+    this.apiDataService.kueVideo(obj);
+
+  }
+
+  test2() {
+
+    const obj = {
+      name: '2222'
+    }
+
+    this.apiDataService.kueEmail(obj);
+    
   }
 
 }

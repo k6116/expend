@@ -1,0 +1,87 @@
+
+
+div.row.row-custom.page-header-row {
+    /* background-color: rgb(224, 228, 230); */
+    /* border-radius: 5px; */
+    margin-bottom: 40px;
+    border-bottom: 3px solid lightgrey;
+}
+
+div.row.websockets-row {
+    margin-bottom: 25px;
+}
+
+div.chat-app-title {
+    font-size: 22px;
+    font-weight: 600;
+    /* padding: 10px 15px; */
+    padding-bottom: 5px;
+}
+
+input.form-control.chat-message {
+    width: 250px;
+}
+
+button.btn.btn-primary.chat-send-button {
+    margin-left: 20px;
+    color: #fff;
+    background-color: rgb(108, 117, 125);
+    border-color: rgb(108, 117, 125);
+    /* width: 90px; */
+    height: 35px;
+}
+  
+button.btn.btn-primary.chat-send-button:hover {
+    background-color: rgb(138, 147, 155);
+}
+
+button.btn:focus, button.btn:active {
+    outline: none;
+    box-shadow: none;
+}
+
+i.btn-icon {
+    margin-right: 5px;
+}
+
+div.chat-messages-cont {
+    margin-top: 25px;
+}
+
+div.online-user {
+    height: 40px;
+    border: 1px solid lightgrey;
+    margin-top: 10px;
+    line-height: 40px;
+    padding: 0 25px;
+}
+
+div.notifications-col {
+    width: 100%;
+    height: 100px;
+    border: 1px solid lightgrey;
+    padding: 10px;
+    background-color: white;
+}
+
+div.chats-col, div.loggedin-col {
+    height: 400px;
+    border: 1px solid lightgrey;
+    padding: 10px;
+    overflow-y: auto;
+    width: 48%;
+    background-color: white;
+}
+
+div.chats-col {
+    margin-right: 4%
+}
+
+div.header-text-cont {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+div.content-cont.chats {
+    margin-bottom: 5px;
+}

@@ -11,6 +11,7 @@ export class SidebarComponent implements OnInit {
   dashboard: boolean;
   expenses: boolean;
   scheduler: boolean;
+  chat: boolean;
 
   constructor(
     private router: Router
@@ -25,6 +26,7 @@ export class SidebarComponent implements OnInit {
     this.expenses = true;
     this.dashboard = false;
     this.scheduler = false;
+    this.chat = false;
   }
 
   onDashboardMenuClick() {
@@ -33,6 +35,7 @@ export class SidebarComponent implements OnInit {
     this.expenses = false;
     this.dashboard = true;
     this.scheduler = false;
+    this.chat = false;
   }
 
   onSchedulerMenuClick() {
@@ -41,6 +44,16 @@ export class SidebarComponent implements OnInit {
     this.expenses = false;
     this.dashboard = false;
     this.scheduler = true;
+    this.chat = false;
+  }
+
+  onChatMenuClick() {
+    console.log('Chat Menu Click');
+    this.router.navigate([`/main/chat`]);
+    this.expenses = false;
+    this.dashboard = false;
+    this.scheduler = false;
+    this.chat = true;
   }
 
 }

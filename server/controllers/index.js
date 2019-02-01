@@ -4,5 +4,6 @@ module.exports = {
   category: require('./categoryController'),
   expense: require('./expenseController'),
   user: require('./userController'),
-  python: require('./pythonController')
+  python: require('./pythonController'),
+  kue: require('./kueController')
 }

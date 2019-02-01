@@ -1,0 +1,35 @@
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col">
+        WebSockets and Socket.io Examples
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <form class="form-inline">
+        <input class="form-control chat-message" [(ngModel)]="inputText" type="text" name="first" (keyup.enter)="onSendMessageClick()" appAutofocus>
+        <button type="button" (click)="onSendMessageClick()">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="header-text-cont">Notifications</div>
+      <div class="content-cont notifications">{{ userMessage }}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div>Chat</div>
+      <div *ngFor="let message of messages" class="content-cont chats">
+        {{ message }}
+      </div>
+    </div>
+  </div>
+
+</div>

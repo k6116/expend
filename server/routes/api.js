@@ -23,6 +23,10 @@ router.post('/register', controllers.auth.register);
 router.get('/pythonTest/', controllers.python.pythonTest);
 router.get('/scheduleAlgo/', controllers.python.scheduleAlgo);
 
+// Kue Controller
+router.post('/kueVideo', controllers.kue.kueVideo);
+router.post('/kueEmail', controllers.kue.kueEmail);
+
 
 module.exports = router;
 

@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 
 // SERVICES
 import { ApiDataService } from './_shared/services/api-data.service';
+import { WebsocketService } from './_shared/services/websocket.service';
 import { CacheService } from './_shared/services/cache.service';
 import { AuthGuard } from './_shared/guards/auth.guard';
 import { JwtInterceptor } from './_shared/services/jwt.interceptor';
@@ -23,6 +24,8 @@ import { AlertComponent } from './alert/alert.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
+import { ChatComponent } from './chat/chat.component';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +38,7 @@ import { SchedulerComponent } from './scheduler/scheduler.component';
     DashboardComponent,
     RegisterComponent,
     SchedulerComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,7 @@ import { SchedulerComponent } from './scheduler/scheduler.component';
   ],
   providers: [
     ApiDataService,
+    WebsocketService,
     CacheService,
     AuthGuard,
     AlertService,

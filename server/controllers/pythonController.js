@@ -3,7 +3,6 @@ const models = require('../models')
 const Sequelize = require('sequelize');
 const sequelize = require('../db/sequelize').sequelize;
 
-
 function pythonTest(req, res) {
 
   
@@ -65,8 +64,8 @@ function scheduleAlgo(req, res) {
   // py.stdin.write(JSON.stringify(dataString));
   // py.stdin.write(res.json(dataString.toString()));
   py.stdin.end();
-};
 
+};
 
 module.exports = {
   pythonTest: pythonTest,

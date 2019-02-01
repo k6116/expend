@@ -10,6 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
 import { AuthGuard } from './_shared/guards/auth.guard';
+import { ChatComponent } from './chat/chat.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -24,6 +26,8 @@ const routes: Routes = [
       { path: 'scheduler', component: SchedulerComponent, canActivate: [AuthGuard] },
       // { path: '', redirectTo: 'fte-entry/employee', pathMatch: 'full' },
       // { path: 'dashboard', component: DashboardComponent }
+      { path: 'chat', component: ChatComponent, canActivate: [AuthGuard]  },
+
     ]
   },
   { path: '**', redirectTo: '/main' }

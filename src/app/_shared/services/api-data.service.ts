@@ -12,7 +12,7 @@ export class ApiDataService {
     private http: Http
   ) {
     // 15 seconds
-    this.timeout = 15000;
+    this.timeout = 1500000;
   }
 
   // Expense APIs
@@ -67,6 +67,22 @@ export class ApiDataService {
     return this.http.get(`/api/scheduleAlgo/`)
       .timeout(this.timeout)
       .map((response: Response) => response.json());
+  }
+
+  // Kue APIs
+
+  kueVideo(obj: any) {
+    const headers = new Headers({'Content-Type': 'application/json'});
+    const options = new RequestOptions({ headers: headers });
+    this.http.post(`/api/kueVideo/`, JSON.stringify(obj), options)
+      .subscribe({ error: e => console.error(e) });
+  }
+
+  kueEmail(obj: any) {
+    const headers = new Headers({'Content-Type': 'application/json'});
+    const options = new RequestOptions({ headers: headers });
+    this.http.post(`/api/kueEmail/`, JSON.stringify(obj), options)
+      .subscribe({ error: e => console.error(e) });
   }
 
 
